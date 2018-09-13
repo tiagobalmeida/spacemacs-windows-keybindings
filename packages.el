@@ -30,7 +30,9 @@
 ;;; Code:
 (defconst windows-keybindings-packages
   '(evil
-    org-cua-dwim)
+    org-cua-dwim
+    drag-stuff ; used for Alt+Up and Alt+down dragging of text
+    )
   "The list of Lisp packages required by the windows-keybindings layer.
 
 Each entry is either:
@@ -64,5 +66,10 @@ Each entry is either:
 
 (defun windows-keybindings/init-org-cua-dwim ()
   )
+
+(defun windows-keybindings/init-drag-stuff ()
+  (drag-stuff-mode t)
+  (drag-stuff-global-mode 1))
+
 
 ;;; packages.el ends here

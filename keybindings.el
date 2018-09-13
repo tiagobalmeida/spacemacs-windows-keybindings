@@ -24,8 +24,8 @@
 (bind-key* "C-S-a"   #'mark-whole-buffer)
 
 ;; Dragging lines. TODO: Needs to drag regions as well.
-(bind-key* "M-<up>" #'move-text-line-up)
-(bind-key* "M-<down>" #'move-text-line-evil-toggle-key)
+(bind-key* "M-<up>" #'drag-stuff-up)
+(bind-key* "M-<down>" #'drag-stuff-down)
 
 ;; This moves isearch-forward from C-s to C-f. We also need to adjust the keys within the isearch-mode-map.
 (bind-key "C-f"      #'isearch-forward)
@@ -39,5 +39,5 @@
 
 ;; Increasing / decreasing font size with C+Scroll
 ;; Don't understand why it doesn't work by default..
-(bind-key* "C-<mouse-4>" #'spacemacs/zoom-frm-in)
-(bind-key* "C-<mouse-5>" #'spacemacs/zoom-frm-out)
+;;(bind-key* "C-<mouse-4>" #'spacemacs/zoom-frm-in)
+;;(bind-key* "C-<mouse-5>" #'spacemacs/zoom-frm-out)
