@@ -34,6 +34,12 @@
 (bind-key* "C-o"     #'spacemacs/helm-find-files)
 (bind-key* "C-n"     #'spacemacs/new-empty-buffer)
 
+(bind-key* "C-k C-o"
+           (lambda ()
+             (interactive)
+             (helm-projectile-switch-project)
+             (neotree-show)))
+
 (unbind-key "C-s"    isearch-mode-map)
 (bind-key* "C-s"     #'save-buffer)
 
