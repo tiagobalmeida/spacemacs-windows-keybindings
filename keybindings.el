@@ -36,6 +36,7 @@
 
 (unbind-key "C-s"    isearch-mode-map)
 (bind-key* "C-s"     #'save-buffer)
+(bind-key* "C-p"     #'helm-projectile-find-file)
 
 ;; Increasing / decreasing font size with C+Scroll
 ;; Don't understand why it doesn't work by default..

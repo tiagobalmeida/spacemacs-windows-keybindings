@@ -1,5 +1,5 @@
 # spacemacs-windows-keybindings
-Bringing the usual Windows shortcuts to spacemacs as an option 
+Bringing the usual Windows editor shortcuts to spacemacs as an option. 
 
 # Installation
 
@@ -22,3 +22,7 @@ add `windows-keybindings` to your `~/.spacemacs`
      windows-keybindings
      ...
 ```
+
+# TODO
+ - C-p should bring up helm-projectile-find-file - What happens if the user is using ivy instead?
+
