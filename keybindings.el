@@ -28,15 +28,17 @@
 (bind-key* "M-<down>" #'drag-stuff-down)
 
 ;; This moves isearch-forward from C-s to C-f. We also need to adjust the keys within the isearch-mode-map.
-(bind-key "C-f"      #'isearch-forward)
-(bind-key "C-f"      #'isearch-repeat-forward isearch-mode-map)
+(when windows-keybindings-c-f-searches
+  (bind-key "C-f"      #'isearch-forward)
+  (bind-key "C-f"      #'isearch-repeat-forward isearch-mode-map))
 
 (bind-key* "C-o"     #'spacemacs/helm-find-files)
 (bind-key* "C-n"     #'spacemacs/new-empty-buffer)
 
-(unbind-key "C-s"    isearch-mode-map)
-(bind-key* "C-s"     #'save-buffer)
-(bind-key* "C-p"     #'helm-projectile-find-file)
+(when windows-keybindings-c-s-saves
+  (unbind-key "C-s"    isearch-mode-map)
+  (bind-key* "C-s"     #'save-buffer)
+  (bind-key* "C-p"     #'helm-projectile-find-file))
 
 ;; Increasing / decreasing font size with C+Scroll
 ;; Don't understand why it doesn't work by default..
