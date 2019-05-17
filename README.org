@@ -1,0 +1,53 @@
+
+* spacemacs-windows-keybindings
+Bringing the usual Windows editor shortcuts to spacemacs as an option. 
+
+* Installation
+
+In your .emacs.d folder, do the following:
+
+#+BEGIN_SRC sh
+git clone https://github.com/jumpifzero/spacemacs-windows-keybindings.git private/windows-keybindings
+#+END_SRC
+
+add `windows-keybindings` to your `~/.spacemacs`
+
+#+BEGIN_SRC emacs-lisp
+   dotspacemacs-configuration-layers
+   '(
+     ;; ----------------------------------------------------------------
+     ;; Example of useful layers you may want to use right away.
+     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
+     ;; <M-m f e R> (Emacs style) to install them.
+     ;; ----------------------------------------------------------------
+     windows-keybindings
+     ...
+#+END_SRC
+
+* Configuration
+
+| Key binding             | Emacs default function | Windows default function | Variable name |
+|-------------------------+------------------------+--------------------------+---------------|
+| Ctrl+f                  | Forward char           | Find                     |               |
+| Ctrl+o                  |                        | Open                     |               |
+| Ctrl+s                  | Search                 | Save                     |               |
+| Ctrl+g                  | Quit                   | Go to line               |               |
+| Ctrl+n                  |                        | New file                 |               |
+| Ctrl+c                  |                        | Copy                     |               |
+| Ctrl+c(empty selection) |                        | Copy line                |               |
+| Ctrl+v                  |                        | Paste                    |               |
+| Ctrl+z                  |                        | Undo                     |               |
+| Alt+up                  |                        | Move line up             |               |
+| Alt+down                |                        | Move line down           |               |
+| Ctrl+x(empty selection) |                        | Cut line                 |               |
+| Ctrl+x                  |                        | Cut selection            |               |
+| Ctrl+Shift+k            |                        | Delete line              |               |
+| Ctrl+Enter              |                        | Insert line below        |               |
+| Ctrl+Shift+Enter        |                        | Insert line above        |               |
+| Shift+Alt+down          |                        |                          |               |
+
+
+
+* TO DO
+ - C-p should bring up helm-projectile-find-file - What happens if the user is using ivy instead?
+
