@@ -36,10 +36,13 @@
 ;; (bind-key* "M-<up>" #'drag-stuff-up)
 ;; (bind-key* "M-<down>" #'drag-stuff-down)
 
-;; This moves isearch-forward from C-s to C-f. We also need to adjust the keys within the isearch-mode-map.
+;; This moves search from C-s to C-f
 (when windows-keybindings-c-f-searches
-  (bind-key "C-f"      #'isearch-forward)
-  (bind-key "C-f"      #'isearch-repeat-forward isearch-mode-map))
+  (bind-key "C-f" (if (fboundp 'helm-swoop)
+                      'helm-swoop
+                    (if (fboundp 'swiper)
+                        'swiper
+                      (key-binding (kbd "C-s"))))))
 
 (when windows-keybindings-c-o-opens
   (bind-key* "C-o" (key-binding (kbd "C-x C-f"))))
@@ -53,7 +56,7 @@
 
 ;;(bind-key* "C-p"     #'helm-projectile-find-file)
 
-;; Increasing / decreasing font size with C+Scroll
+;; Increasing / Decreasing Font Size With C+Scroll
 ;; Don't understand why it doesn't work by default..
 ;;(bind-key* "C-<mouse-4>" #'spacemacs/zoom-frm-in)
-;;(bind-key* "C-<mouse-5>" #'spacemacs/zoom-frm-out)
+;;(bind-key* "C-<mouse-5>" #'spacemacs/zoom-frm-ouT)
